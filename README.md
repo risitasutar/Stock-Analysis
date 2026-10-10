@@ -3,7 +3,7 @@
 
 > **Transform raw market data into actionable intelligence.** This isn't just another stock tracker—it's your personal quantitative analyst, data scientist, and trading strategist rolled into one powerful application.
 
-## 🌐 **[Try It Live Now!](https://anshuman123-dev-stock-analysis-and-forcastin-trading-app-11gsrh.streamlit.app/)**
+## 🌐 **[Try It Live Now!](https://stock-analysis-yg8vsz4pmkjfbgbba2ecn8.streamlit.app/)**
 
 **No installation required. No credit card. No excuses.** Experience the power of institutional-grade analytics directly in your browser.
 
