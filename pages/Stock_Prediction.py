@@ -63,7 +63,11 @@ fig_tail = plotly_table(forecast.sort_index(ascending = True).round(3))
 fig_tail.update_layout(height = 220)
 st.plotly_chart(fig_tail, use_container_width=True)
 
-forecast = pd.concat([rolling_price, forecast])
+# Normalize index: rolling_price has tz-aware index (from yfinance),
+# forecast has tz-naive index (from pd.date_range). Strip tz to unify.
+rolling_price_naive = rolling_price.copy()
+rolling_price_naive.index = rolling_price_naive.index.tz_localize(None)
+forecast = pd.concat([rolling_price_naive, forecast])
 
 # Show recent data - last 180 days of historical + 30 forecast days
 total_length = len(forecast)

@@ -9,6 +9,9 @@ import pandas as pd
 
 def get_data(ticker):
     stock_data = yf.download(ticker, start='2024-01-01')
+    # Flatten MultiIndex columns from yfinance (e.g. ('Close','AAPL') -> 'Close')
+    if isinstance(stock_data.columns, pd.MultiIndex):
+        stock_data.columns = stock_data.columns.get_level_values(0)
     return stock_data[['Close']]
 
 def stationary_check(close_price):
